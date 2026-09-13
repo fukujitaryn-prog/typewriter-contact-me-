@@ -551,13 +551,14 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
           justify-content: center;
           gap: 32px;
           width: 100%;
-          max-width: 830px;
+          max-width: 950px;
         }
         .tw-heading-side {
           text-align: left;
           padding-top: 8px;
           flex-shrink: 0;
-          width: 190px;
+          width: auto;
+          white-space: nowrap;
         }
         @media (max-width: 640px) {
           .tw-layout-row { flex-direction: column; align-items: center; }
