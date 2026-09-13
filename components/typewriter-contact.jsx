@@ -301,7 +301,9 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       boxShadow: COLORS.twBodyShadow,
       position: "relative", zIndex: 5, padding: "0 0 0",
       overflow: "visible",
-      marginBottom: 28,
+      marginBottom: -58,
+      transform: "scale(0.78)",
+      transformOrigin: "center top",
     },
     /* Curved front lip with brand area */
     twBodyFront: {
@@ -573,7 +575,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
                           className="tw-field-input"
                           style={s.fieldInput}
                           value={val}
-                          rows={2}
+                          rows={4}
                           placeholder={isActive ? "" : field.placeholder}
                           onChange={handleInput(field.key)}
                           onKeyDown={handleKeyDown(idx)}
