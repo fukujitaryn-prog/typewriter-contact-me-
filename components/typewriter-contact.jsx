@@ -245,17 +245,17 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
   const s = {
     page: {
       display: "flex", flexDirection: "column", alignItems: "center",
-      padding: "32px 16px 48px", fontFamily: "'Jost', sans-serif",
+      padding: "10px 16px 10px", fontFamily: "'Jost', sans-serif",
     },
-    heading: { textAlign: "center", marginBottom: 24 },
+    heading: { textAlign: "center", marginBottom: 10 },
     headingSub: {
       fontFamily: "'Fraunces', serif", fontStyle: "italic",
       fontSize: 11, color: COLORS.textMuted,
-      letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 5,
+      letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 4,
     },
     headingTitle: {
       fontFamily: "'Fraunces', serif", fontStyle: "italic", fontWeight: 400,
-      fontSize: 32, color: COLORS.textDark, lineHeight: 1.1,
+      fontSize: 26, color: COLORS.textDark, lineHeight: 1.1,
     },
     scene: { width: "100%", maxWidth: 500, display: "flex", flexDirection: "column", alignItems: "center" },
     paperWrap: { width: "76%", position: "relative", zIndex: 2, marginBottom: -12 },
@@ -264,7 +264,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       borderLeft: `1px solid ${COLORS.paperBorder}`,
       borderRight: `1px solid ${COLORS.paperBorder}`,
       borderTop: `1px solid ${COLORS.paperBorder}`,
-      minHeight: 300, padding: "20px 20px 8px 28px",
+      minHeight: 170, padding: "12px 20px 8px 28px",
       position: "relative", fontFamily: "'Jost', sans-serif",
       /* Paper shadow where it emerges from platen */
       borderBottom: "2px solid rgba(0,0,0,0.08)",
@@ -301,12 +301,12 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       boxShadow: COLORS.twBodyShadow,
       position: "relative", zIndex: 5, padding: "0 0 0",
       overflow: "visible",
-      marginBottom: 24,
+      marginBottom: 12,
     },
     /* Curved front lip with brand area */
     twBodyFront: {
       background: "linear-gradient(to bottom, #D8D4CC 0%, #C8C4BC 100%)",
-      padding: "12px 20px 16px",
+      padding: "10px 20px 12px",
       borderTop: `1px solid ${COLORS.twBodyBorder}`,
       borderRadius: "0 0 20px 20px",
       position: "relative",
@@ -328,7 +328,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     /* Platen assembly area */
     platenArea: {
       background: COLORS.twBody,
-      padding: "14px 56px 12px", display: "flex", alignItems: "center", gap: 0,
+      padding: "10px 56px 8px", display: "flex", alignItems: "center", gap: 0,
       position: "relative",
     },
     /* Thick rubber platen roller */
@@ -365,7 +365,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     carriageMark: { width: 2, height: 4, background: "#E8DFD0", borderRadius: 1 },
     /* Typehammer fan - semi-circular array */
     hammerFanWrap: {
-      position: "relative", width: "100%", height: 50, marginTop: 6,
+      position: "relative", width: "100%", height: 46, marginTop: 4,
       display: "flex", justifyContent: "center", overflow: "hidden",
     },
     hammerFanBg: {
@@ -387,7 +387,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     },
     /* Raised guide buttons above hammers */
     guideButtonRow: {
-      display: "flex", justifyContent: "center", gap: 8, marginBottom: 8,
+      display: "flex", justifyContent: "center", gap: 8, marginBottom: 4,
     },
     guideButton: {
       width: 10, height: 10, borderRadius: "50%",
@@ -397,14 +397,14 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     /* Dark recessed key well with inset shadow */
     keyWell: {
       background: COLORS.keyWell,
-      margin: "0", padding: "12px 16px 16px",
+      margin: "0", padding: "10px 16px 12px",
       position: "relative",
       boxShadow: "inset 0 6px 12px rgba(0,0,0,0.4), inset 0 2px 4px rgba(0,0,0,0.3)",
       borderRadius: "0 0 4px 4px",
     },
     /* Round domed keys - staggered rows */
-    keyRow: (ri) => ({ 
-      display: "flex", justifyContent: "center", gap: 6, marginBottom: 6,
+    keyRow: (ri) => ({
+      display: "flex", justifyContent: "center", gap: 6, marginBottom: 4,
       marginLeft: ri === 1 ? 12 : ri === 2 ? 24 : 0,
     }),
     /* Round domed key - outer ring + inner dome */
@@ -460,7 +460,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       fontSize: 7, color: COLORS.fnText, cursor: "default",
       fontFamily: "'Jost', sans-serif", letterSpacing: "0.04em", textTransform: "uppercase",
     },
-    sendRow: { marginTop: 14, display: "flex", justifyContent: "center" },
+    sendRow: { marginTop: 8, display: "flex", justifyContent: "center" },
     sendBtn: (ready) => ({
       background: ready ? COLORS.sendReady : COLORS.sendLocked,
       color: ready ? COLORS.sendReadyTx : COLORS.sendLockedTx,
@@ -471,7 +471,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       boxShadow: ready ? COLORS.sendReadySh : COLORS.sendLockedSh,
       transition: "all 0.2s",
     }),
-    fieldBlock: { marginBottom: 16, cursor: "text" },
+    fieldBlock: { marginBottom: 7, cursor: "text" },
     fieldLabel: (active) => ({
       fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase",
       fontWeight: 500, marginBottom: 3,
@@ -490,7 +490,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       marginTop: 1, transition: "all 0.2s",
     }),
     footerNote: {
-      marginTop: 14, fontSize: 10, color: COLORS.textFaint,
+      marginTop: 8, fontSize: 10, color: COLORS.textFaint,
       letterSpacing: "0.07em", textAlign: "center",
     },
     errorNote: {
