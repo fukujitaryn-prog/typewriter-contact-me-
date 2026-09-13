@@ -245,7 +245,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
   const s = {
     page: {
       display: "flex", flexDirection: "column", alignItems: "center",
-      padding: "8px 16px 8px", fontFamily: "'Jost', sans-serif",
+      padding: "40px 16px 8px", fontFamily: "'Jost', sans-serif",
     },
     headingSub: {
       fontFamily: "'Fraunces', serif", fontStyle: "italic",
@@ -300,8 +300,8 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       boxShadow: COLORS.twBodyShadow,
       position: "relative", zIndex: 5, padding: "0 0 0",
       overflow: "visible",
-      marginBottom: -12,
-      transform: "scale(0.92)",
+      marginBottom: 0,
+      transform: "scale(0.85)",
       transformOrigin: "center top",
     },
     /* Curved front lip with brand area */
