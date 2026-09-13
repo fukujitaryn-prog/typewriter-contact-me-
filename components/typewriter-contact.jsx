@@ -270,7 +270,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       padding: "40px 16px 8px", fontFamily: "'Jost', sans-serif",
     },
     headingSub: {
-      fontFamily: "'Fraunces', serif", fontStyle: "italic",
+      fontFamily: "'Jost', sans-serif", fontStyle: "normal", fontWeight: 400,
       fontSize: 11, color: COLORS.textMuted,
       letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 4,
     },
