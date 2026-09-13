@@ -566,6 +566,17 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
           .tw-layout-row { flex-direction: column; align-items: center; }
           .tw-heading-side { text-align: center; width: auto; padding-top: 0; margin-bottom: 10px; }
         }
+
+        .tw-knob-left  { left: -44px; }
+        .tw-knob-right { right: -44px; }
+        @media (max-width: 900px) {
+          .tw-knob-left  { left: -24px; }
+          .tw-knob-right { right: -24px; }
+        }
+        @media (max-width: 430px) {
+          .tw-knob-left  { left: -14px; }
+          .tw-knob-right { right: -14px; }
+        }
       `}</style>
 
       <div style={s.page}>
@@ -654,13 +665,13 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
           {/* Typewriter body */}
           <div style={s.twBody}>
             {/* Left side knob */}
-            <div style={{ ...s.sideKnobWrap, left: -44 }}>
+            <div className="tw-knob-left" style={s.sideKnobWrap}>
               <div style={s.sideKnob}>
                 {[0,1,2,3,4,5].map(i => <div key={i} style={s.sideKnobRidge} />)}
               </div>
             </div>
             {/* Right side knob */}
-            <div style={{ ...s.sideKnobWrap, right: -44 }}>
+            <div className="tw-knob-right" style={s.sideKnobWrap}>
               <div style={s.sideKnob}>
                 {[0,1,2,3,4,5].map(i => <div key={i} style={s.sideKnobRidge} />)}
               </div>

@@ -238,6 +238,37 @@ export default function TarynNav({
           transition: transform 0.25s ease;
           box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         }
+
+        /* Responsive: reflow into a compact wrapped layout instead of overflowing */
+        @media (max-width: 860px) {
+          .tf-nav {
+            flex-wrap: wrap;
+            row-gap: 10px;
+            height: auto;
+            padding: 14px 20px;
+          }
+          .tf-logo-wrap {
+            position: static;
+            transform: none;
+            order: -1;
+            width: 100%;
+            justify-content: center;
+          }
+          .tf-links {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 8px;
+          }
+        }
+        @media (max-width: 480px) {
+          .tf-nav { padding: 12px 14px; }
+          .tf-site-name { font-size: 9px; letter-spacing: 0.14em; }
+          .tf-links { gap: 0; column-gap: 2px; }
+          .tf-link { padding: 6px 6px; }
+          .tf-resume { padding: 7px 10px; margin-left: 2px; }
+          .tf-resume-text { display: none; }
+          .tf-divider { margin: 0 6px; }
+        }
       `}</style>
 
       <div className="tf-root">
@@ -282,7 +313,7 @@ export default function TarynNav({
                 >
                   <path d="M7 1v8M4 6.5l3 3 3-3M1.5 12.5h11" />
                 </svg>
-                Resume
+                <span className="tf-resume-text">Resume</span>
               </span>
             </a>
 
