@@ -245,7 +245,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
   const s = {
     page: {
       display: "flex", flexDirection: "column", alignItems: "center",
-      padding: "10px 16px 10px", fontFamily: "'Jost', sans-serif",
+      padding: "8px 16px 8px", fontFamily: "'Jost', sans-serif",
     },
     heading: { textAlign: "center", marginBottom: 10 },
     headingSub: {
@@ -301,7 +301,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       boxShadow: COLORS.twBodyShadow,
       position: "relative", zIndex: 5, padding: "0 0 0",
       overflow: "visible",
-      marginBottom: 12,
+      marginBottom: 28,
     },
     /* Curved front lip with brand area */
     twBodyFront: {
@@ -490,7 +490,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       marginTop: 1, transition: "all 0.2s",
     }),
     footerNote: {
-      marginTop: 8, fontSize: 10, color: COLORS.textFaint,
+      marginTop: 5, fontSize: 10, color: COLORS.textFaint,
       letterSpacing: "0.07em", textAlign: "center",
     },
     errorNote: {
@@ -573,7 +573,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
                           className="tw-field-input"
                           style={s.fieldInput}
                           value={val}
-                          rows={3}
+                          rows={2}
                           placeholder={isActive ? "" : field.placeholder}
                           onChange={handleInput(field.key)}
                           onKeyDown={handleKeyDown(idx)}
