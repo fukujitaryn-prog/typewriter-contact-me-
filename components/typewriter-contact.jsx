@@ -247,7 +247,6 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       display: "flex", flexDirection: "column", alignItems: "center",
       padding: "8px 16px 8px", fontFamily: "'Jost', sans-serif",
     },
-    heading: { textAlign: "center", marginBottom: 10 },
     headingSub: {
       fontFamily: "'Fraunces', serif", fontStyle: "italic",
       fontSize: 11, color: COLORS.textMuted,
@@ -301,8 +300,8 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       boxShadow: COLORS.twBodyShadow,
       position: "relative", zIndex: 5, padding: "0 0 0",
       overflow: "visible",
-      marginBottom: -58,
-      transform: "scale(0.78)",
+      marginBottom: -12,
+      transform: "scale(0.92)",
       transformOrigin: "center top",
     },
     /* Curved front lip with brand area */
@@ -522,16 +521,37 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
         .tw-send-btn:hover { transform: translateY(1px) !important; }
         .tw-send-btn:active { transform: translateY(3px) !important; box-shadow: none !important; }
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,400;1,600&family=Jost:wght@300;400;500&display=swap');
+
+        .tw-layout-row {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: center;
+          gap: 28px;
+          width: 100%;
+          max-width: 760px;
+        }
+        .tw-heading-side {
+          text-align: left;
+          padding-top: 6px;
+          flex-shrink: 0;
+          width: 170px;
+        }
+        @media (max-width: 640px) {
+          .tw-layout-row { flex-direction: column; align-items: center; }
+          .tw-heading-side { text-align: center; width: auto; padding-top: 0; margin-bottom: 10px; }
+        }
       `}</style>
 
       <div style={s.page}>
-        {/* Heading */}
-        <div style={s.heading}>
-          <div style={s.headingSub}>send a letter</div>
-          <div style={s.headingTitle}>Let's get in touch</div>
-        </div>
+        <div className="tw-layout-row">
+          {/* Heading — beside the typewriter, top-aligned */}
+          <div className="tw-heading-side">
+            <div style={s.headingSub}>send a letter</div>
+            <div style={s.headingTitle}>Let's get in touch</div>
+          </div>
 
-        <div style={s.scene}>
+          <div style={s.scene}>
           {/* Paper */}
           <div style={s.paperWrap}>
             <div style={s.paper}>
@@ -575,7 +595,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
                           className="tw-field-input"
                           style={s.fieldInput}
                           value={val}
-                          rows={4}
+                          rows={3}
                           placeholder={isActive ? "" : field.placeholder}
                           onChange={handleInput(field.key)}
                           onKeyDown={handleKeyDown(idx)}
@@ -704,6 +724,7 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
                 <div style={s.errorNote}>Couldn't send — please try again.</div>
               )}
             </div>
+          </div>
           </div>
         </div>
 

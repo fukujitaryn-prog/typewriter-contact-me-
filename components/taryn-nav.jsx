@@ -58,6 +58,8 @@ export default function TarynNav({
         .tf-nav {
           display: flex;
           align-items: center;
+          justify-content: space-between;
+          position: relative;
           height: 72px;
           padding: 0 40px;
           max-width: 1400px;
@@ -78,11 +80,13 @@ export default function TarynNav({
           text-decoration: none;
         }
 
-        /* Logo */
+        /* Logo — absolutely centered so unequal side widths don't skew it */
         .tf-logo-wrap {
-          flex: 1;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
           display: flex;
-          justify-content: center;
           align-items: center;
         }
         .tf-logo-link {
