@@ -475,14 +475,16 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       background: pressed ? COLORS.keyPressed : COLORS.spaceBar,
       transition: "background 0.07s",
     }),
-    fnKey: {
+    fnKey: (pressed) => ({
       width: 28, height: 28, borderRadius: "50%",
       background: COLORS.fnKey, border: `1px solid ${COLORS.fnBorder}`,
-      boxShadow: "0 2px 0 #B0A898",
+      boxShadow: pressed ? "0 1px 0 #B0A898" : "0 2px 0 #B0A898",
+      transform: pressed ? "translateY(2px)" : "translateY(0)",
+      transition: "transform 0.07s, box-shadow 0.07s",
       display: "flex", alignItems: "center", justifyContent: "center",
       fontSize: 7, color: COLORS.fnText, cursor: "default",
       fontFamily: "'Jost', sans-serif", letterSpacing: "0.04em", textTransform: "uppercase",
-    },
+    }),
     sendRow: { marginTop: 8, display: "flex", justifyContent: "center" },
     sendBtn: (ready) => ({
       background: ready ? COLORS.sendReady : COLORS.sendLocked,
@@ -719,11 +721,11 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
                   ))}
                   {/* Spacebar row */}
                   <div style={s.spacebarRow}>
-                    <div style={s.fnKey}>tab</div>
+                    <div style={s.fnKey(pressedKey === "TAB")}>tab</div>
                     <div style={s.spacebarOuter(pressedKey === "SPACE")}>
                       <div style={s.spacebarInner(pressedKey === "SPACE")} />
                     </div>
-                    <div style={s.fnKey}>{"↵"}</div>
+                    <div style={s.fnKey(pressedKey === "↵")}>{"↵"}</div>
                   </div>
                 </div>
               )}
