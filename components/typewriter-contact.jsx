@@ -254,9 +254,9 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     },
     headingTitle: {
       fontFamily: "'Fraunces', serif", fontStyle: "italic", fontWeight: 400,
-      fontSize: 26, color: COLORS.textDark, lineHeight: 1.1,
+      fontSize: 30, color: COLORS.textDark, lineHeight: 1.1,
     },
-    scene: { width: "100%", maxWidth: 500, display: "flex", flexDirection: "column", alignItems: "center" },
+    scene: { width: "100%", maxWidth: 570, display: "flex", flexDirection: "column", alignItems: "center" },
     paperWrap: { width: "76%", position: "relative", zIndex: 2, marginBottom: -12 },
     paper: {
       background: COLORS.paper,
@@ -300,8 +300,8 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
       boxShadow: COLORS.twBodyShadow,
       position: "relative", zIndex: 5, padding: "0 0 0",
       overflow: "visible",
-      marginBottom: 0,
-      transform: "scale(0.85)",
+      marginBottom: 10,
+      transform: "scale(0.94)",
       transformOrigin: "center top",
     },
     /* Curved front lip with brand area */
@@ -527,15 +527,15 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
           flex-direction: row;
           align-items: flex-start;
           justify-content: center;
-          gap: 28px;
+          gap: 32px;
           width: 100%;
-          max-width: 760px;
+          max-width: 830px;
         }
         .tw-heading-side {
           text-align: left;
-          padding-top: 6px;
+          padding-top: 8px;
           flex-shrink: 0;
-          width: 170px;
+          width: 190px;
         }
         @media (max-width: 640px) {
           .tw-layout-row { flex-direction: column; align-items: center; }
@@ -725,10 +725,9 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
               )}
             </div>
           </div>
+          <div style={s.footerNote}>tab · shift+tab between fields &nbsp;·&nbsp; all corrections welcome</div>
           </div>
         </div>
-
-        <div style={s.footerNote}>tab · shift+tab between fields &nbsp;·&nbsp; all corrections welcome</div>
       </div>
     </>
   );
