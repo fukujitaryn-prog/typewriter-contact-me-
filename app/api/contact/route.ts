@@ -43,7 +43,7 @@ export async function POST(req: Request) {
 
   try {
     const { error } = await resend.emails.send({
-      from: "Typewriter Contact <onboarding@resend.dev>",
+      from: "Typewriter Contact <contact@tarynfukuji.com>",
       to: TO_EMAIL,
       replyTo: email,
       subject: `New letter from ${name}`,
