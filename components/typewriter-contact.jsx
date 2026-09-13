@@ -223,6 +223,14 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     }
   };
 
+  const handleReset = () => {
+    setValues({ name: "", email: "", msg: "", honeypot: "" });
+    setStatus("idle");
+    setSubmitted(false);
+    setActiveField(0);
+    updateCarriage(0);
+  };
+
   const isReady = values.name.trim() && values.email.trim() && values.msg.trim();
   const isSending = status === "sending";
 
@@ -495,6 +503,12 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     },
     sentBody: { fontSize: 12, color: COLORS.textMuted, lineHeight: 1.9, fontWeight: 300 },
     sentMark: { marginTop: 14, fontSize: 8, color: COLORS.textHint, letterSpacing: "0.1em", textTransform: "uppercase" },
+    resetLink: {
+      marginTop: 18, background: "none", border: "none", padding: 0,
+      fontFamily: "'Jost', sans-serif", fontSize: 10, fontStyle: "italic",
+      color: COLORS.textMuted, letterSpacing: "0.04em", cursor: "pointer",
+      textDecoration: "underline", textUnderlineOffset: 3,
+    },
   };
 
   const today = new Date().toLocaleDateString("en-US", { month: "short", year: "numeric" }).toUpperCase();
@@ -531,6 +545,9 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
                   <div style={s.sentTitle}>Letter sent ✦</div>
                   <div style={s.sentBody}>Thank you, {values.name || "friend"}.<br />I'll write back soon.</div>
                   <div style={s.sentMark}>— {today} · TARYN FUKUJI</div>
+                  <button className="tw-reset-btn" style={s.resetLink} onClick={handleReset}>
+                    send another letter
+                  </button>
                 </div>
               ) : (
                 <>
