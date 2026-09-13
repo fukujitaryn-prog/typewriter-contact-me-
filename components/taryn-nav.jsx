@@ -211,7 +211,7 @@ export default function TarynNav({
           flex-shrink: 0;
         }
         .tf-sound-icon {
-          width: 15px;
+          width: 19px;
           height: 15px;
           color: #A09890;
           flex-shrink: 0;
@@ -291,7 +291,7 @@ export default function TarynNav({
             <div className="tf-sound" onClick={() => setSound(v => !v)}>
               <svg
                 className="tf-sound-icon"
-                viewBox="0 0 16 16"
+                viewBox="0 0 20 16"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.5"
