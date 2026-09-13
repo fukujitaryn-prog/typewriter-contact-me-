@@ -118,6 +118,27 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     } catch (_) {}
   }, [soundOn, getCtx]);
 
+  const playBackspace = useCallback(() => {
+    if (!soundOn) return;
+    try {
+      const ctx = getCtx();
+      const dur = 0.05;
+      const buf = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
+      const d   = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) {
+        const t = i / ctx.sampleRate;
+        d[i] = (Math.random() * 2 - 1) * Math.exp(-t / 0.012);
+      }
+      const src    = ctx.createBufferSource(); src.buffer = buf;
+      const filter = ctx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.value = 700;
+      const gain = ctx.createGain(); gain.gain.value = 0.11;
+      src.connect(filter); filter.connect(gain); gain.connect(ctx.destination);
+      src.start();
+    } catch (_) {}
+  }, [soundOn, getCtx]);
+
   const playReturn = useCallback(() => {
     if (!soundOn) return;
     try {
@@ -168,10 +189,11 @@ export default function TypewriterContact({ onSubmit, soundOn = true }) {
     const map = { Backspace: "⌫", Enter: "↵", Tab: "TAB", " ": "SPACE" };
     const k   = map[key] || key.toUpperCase();
     setPressedKey(k);
-    playClick();
+    if (key === "Backspace") playBackspace();
+    else playClick();
     clearTimeout(pressTimer.current[k]);
     pressTimer.current[k] = setTimeout(() => setPressedKey(null), 130);
-  }, [playClick]);
+  }, [playClick, playBackspace]);
 
   /* ── Field handlers ── */
   const handleInput = (key) => (e) => {
